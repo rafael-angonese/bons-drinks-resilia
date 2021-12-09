@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Exercício 2</h1>
+    <p>
+      Faça fetch dos dados através da aPI
+      <a
+        href="https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772"
+        target="_blank"
+        >(https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772)</a
+      >
+      e retorne a ficha desta refeição com id, nome, área (país de origem),
+      ingredientes (em uma única string) e as intruções.
+    </p>
+    <ul id="ficha"></ul>
+  </body>
+  <script>
+    var apiBase = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772";
+
+    //fazendo a manipulação do DOM para selecionar a ul com id ficha
+    var container = document.querySelector("#ficha");
+    //deixamos declaradas as outras variáveis que iremos usar para preencher com as infos vinda da API
+    var el, resultado, id, nome, origem, array, instrucoes, ingredientes;
+
+    //essa função vai percorrer o objeto(por isso não podemos usar map ou filter) e vai procurar o casamento com as palavras Measure e Ingredient nas propriedades
+    function myIngred(resultado) {
+      const ingr = [];
+      const medida = [];
+      for (let prop in resultado) {
+        const elemento = prop;
+        //aqui estamos achando a propriedade que tem Measure e verificando que seu valor não é nulo, então adicionamos em array de medidas
+        if (elemento.match("Measure") && resultado[elemento]) {
+          medida.push(resultado[elemento]);
+        }
+        //mesmo pensamento para os ingredientes
+        if (elemento.match("Ingredient") && resultado[elemento]) {
+          ingr.push(resultado[elemento]);
+        }
+      }
+      const result = [];
+      //aqui vamos construir um único array a partir de dois concatenando
+      for (let index = 0; index < ingr.length; index++) {
+        if (medida[index] == null) {
+          result.push(ingr[index]);
+        } else {
+          result.push(medida[index] + " " + ingr[index]);
+        }
+      }
+      //método join para transformar o array em uma única string
+      return result.join(", ");
+    }
+
+    //fazemos o fetch da API, passamos para json e então atribuímos os resultados às variáveis declaradas anteriormente
+    fetch(apiBase)
+      .then((response) => response.json())
+      .then((json) => {
+        resultado = json.meals[0];
+        //cria-se um objeto para cada variável com o mesmo formato para depois inserirmos cada objeto em um array e fazer o map dele nos elementos <li>
+        ingredientes = { nome: "ingredientes", valor: myIngred(resultado) };
+        array = [];
+        id = { nome: "id", valor: resultado.idMeal };
+        nome = { nome: "nome", valor: resultado.strMeal };
+        origem = { nome: "origem", valor: resultado.strArea };
+        instrucoes = { nome: "instruções", valor: resultado.strInstructions };
+        array.push(id, nome, origem, ingredientes, instrucoes);
+        //aqui fazemos o map iterando o array e entrando das propriedades de cada objeto do array e inserimos os filhos <li> na <ul> container
+        array.map((item) => {
+          el = document.createElement("li");
+          el.innerHTML = `${item.nome}: ${item.valor}`;
+          container.appendChild(el);
+        });
+      });
+  </script>
+</html>

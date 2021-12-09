@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Exercício 3</h1>
+    <p>
+      Faça fetch dos dados através da API
+      <a
+        href="https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood"
+        target="_blank"
+        >(https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood)</a
+      >
+      e retorne uma lista(array) com os nomes dos primeiros 10 resultados.
+    </p>
+    <ul id="lista"></ul>
+  </body>
+  <script>
+    var apiBase =
+      "https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood";
+    //fazendo a manipulação do DOM para selecionar a ul com id lista
+    var container = document.querySelector("#lista");
+    //deixamos declaradas as outras variáveis que iremos usar para preencher com as infos vinda da API
+    var el, resultado;
+
+    //fazemos o fetch da API, passamos para json e então atribuímos os resultados às variáveis declaradas anteriormente
+    fetch(apiBase)
+      .then((response) => response.json())
+      .then((json) => {
+        resultado = json.meals;
+        //como o resultado vem como array, podemos fazer um map criando elementos <li> e passando o nome dos pratos para cada elemento
+        resultado.map((item, index) => {
+          el = document.createElement("li");
+          if (index < 10) {
+            el.innerHTML = item.strMeal;
+            container.appendChild(el);
+          }
+        });
+      });
+  </script>
+</html>

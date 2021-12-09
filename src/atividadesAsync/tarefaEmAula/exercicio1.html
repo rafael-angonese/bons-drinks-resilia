@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Exercício 1</h1>
+    <p>
+      Escreva uma função soma que retorna a soma dos números de um array array =
+      [1, 5, 23, 76, 87, 34, 687, 86, 98, 103, 489, 423, 89];
+    </p>
+    <p>Solução com função e for: <span id="sol1"></span></p>
+    <p>Solução com spread e reduce: <span id="sol2"></span></p>
+  </body>
+  <script>
+    let array = [1, 5, 23, 76, 87, 34, 687, 86, 98, 103, 489, 423, 89];
+
+    function sum(array) {
+      var total = 0;
+      for (i = 0; array.length > i; i++) {
+        total = array[i] + total;
+      }
+      return total;
+    }
+
+    // com spread e reduce
+    //note que aqui a solução se torna mais curta e precisamos passar o array como spread
+    //poderia também fazer direto sem o corpo de função e chamando apenas o reduce
+    function newSum(...params) {
+      return params.reduce((acumulado, atual) => acumulado + atual);
+    }
+    const resultFor = sum(array);
+    const resultSpread = newSum(...array);
+
+    var solucao1 = document.querySelector("#sol1");
+    solucao1.innerHTML = `${resultFor}`;
+    var solucao2 = document.querySelector("#sol2");
+    solucao2.innerHTML = `${resultSpread}`;
+  </script>
+</html>
