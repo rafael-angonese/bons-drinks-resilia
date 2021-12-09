@@ -1,4 +1,5 @@
 import Button from "./components/Button";
+import ButtonClass from "./components/ButtonClass";
 
 function App() {
   const meuInput = {
@@ -114,8 +115,8 @@ function App() {
         <label>Telefone</label>
         <input style={meuInput} />
         <button style={meuBotao}>Enviar</button>
-
         <Button />
+        <ButtonClass />
       </form>
     </div>
   );
