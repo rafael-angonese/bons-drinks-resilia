@@ -55,6 +55,14 @@ function App() {
     }
   };
 
+  const totalJoao = clienteJoao.compras
+    .map((item) => Number(item.preco))
+    .reduce((a, b) => a + b);
+
+  const totalMaria = clienteMaria.compras
+    .map((item) => Number(item.preco))
+    .reduce((a, b) => a + b);
+
   return (
     <div>
       {/*Utilizamos as chaves para poder passar as variaveis pro JSX*/}
@@ -64,6 +72,33 @@ function App() {
       <p>{clienteJoao.idade >= 18 ? "Maior de idade" : "Menor de idade"}</p>
 
       <p> {checkIdade(clienteJoao.idade)} </p>
+
+      <div
+        style={{
+          fontSize: "18px",
+          width: "70%",
+          margin: "0 auto",
+          color: "#013220",
+          backgroundColor: "#e6ddc5",
+          padding: "20px",
+        }}
+      >
+        <h1 style={{ textAlign: "center" }}>Página dos Clientes</h1>
+        <p>
+          <strong>Cliente 1:</strong> {clienteJoao.nome}
+        </p>
+        <ul style={{ listStyle: "circle" }}>
+          <li>Idade: {clienteJoao.idade}</li>
+          <li>Total de Compras: R${totalJoao}</li>
+        </ul>
+        <p>
+          <strong>Cliente 2:</strong> {clienteMaria.nome}
+        </p>
+        <ul style={{ listStyle: "circle" }}>
+          <li>Idade: {clienteMaria.idade}</li>
+          <li>Total de Compras: R${totalMaria}</li>
+        </ul>
+      </div>
 
       <h1 style={{ textAlign: "center" }}>Olá, mundo!</h1>
 
