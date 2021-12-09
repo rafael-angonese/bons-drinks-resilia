@@ -8,6 +8,8 @@ function App() {
     <div>
       <Clientes />
       <ConctactForm />
+      <Button />
+      <ButtonClass />
     </div>
   );
 }
