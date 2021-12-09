@@ -1,13 +1,15 @@
 import Button from "./components/Button";
 import ButtonClass from "./components/ButtonClass";
 import Clientes from "./components/Clientes";
-import ConctactForm from "./components/ContactForm";
+import ContactForm from "./components/ContactForm";
+import Header from "./components/Header";
 
 function App() {
   return (
     <div>
+      <Header />
       <Clientes />
-      <ConctactForm />
+      <ContactForm />
       <Button />
       <ButtonClass />
     </div>
