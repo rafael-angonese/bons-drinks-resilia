@@ -1,0 +1,72 @@
+/* definimos um flex-grid  */
+.flexGrid {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* definimos o flex-item topo para encaixar na área */
+.topo {
+  background-color: pink;
+  width: 100%;
+  height: 90px;
+}
+/* */
+.meio {
+  /*  aqui é ele flex-item  */
+  /*  então alinhamos ele ao centro pois sua largura é de 80% da tela para dar o espaçamento lateral que vinha no layout  */
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+  /*  e agora ele também é um flex-container com direção de linha, faz quebra quando chegar no máximo e o conteúdo é justificado com espaço-entre, sem mexer no início e no final  */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+/* definimos o flex-item fim para encaixar na área */
+.fim {
+  background-color: pink;
+  width: 100%;
+  height: 70px;
+}
+
+/* flex-items internos do meio */
+/* esse bloco se expande por duas colunas onde quer que ele seja colocado - então a ordem do HTML vai importar */
+.bloco2colunas {
+  background-color: violet;
+  height: 200px;
+  /*  usamos a função css calc() para calcular o tamanho de cada coluna: 
+  - subtraimos do100% do tamanho do container de 220px pois temos 11 vãos(gaps) entre as 12 colunas e cada gap=20px. Em seguida, dividimos esse resultado por 12(número de colunas) e multiplicamos o reultado pelo número de colunas que o bloco ocupa. Por fim, somamos a esse resultado o número de vãos(gap) que há dentro daquele número de colunas, no exemplo de 2 colunas há um vão entre as duas então 1*20px que é o valor do gap. O número de vãos entre as  colunas vai sempre ser = número de colunas - 1.  */
+  width: calc((((100% - 220px) / 12) * 2) + 20px);
+  flex-shrink: 0;
+}
+/* esse se expande por 4 colunas */
+.bloco4colunas {
+  background-color: lavender;
+  height: 200px;
+  width: calc((((100% - 220px) / 12) * 4) + 60px);
+  flex-shrink: 0;
+}
+/* esse se expande por 6 colunas */
+.bloco6colunas {
+  background-color: purple;
+  height: 200px;
+  width: calc((((100% - 220px) / 12) * 6) + 100px);
+  flex-shrink: 0;
+}
+/* colocando o espaçamento entre os elementos */
+div {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+/* tirando o espaçamento dos 3 primeiros elementos utilizando a pseudo-classe nth-child() que pega os n irmãos - a função -n+3 pega os primeiros n=0 -> 3; n=1 -> 2; n=2 -> 1; n=3 -> 0 e para por aqui pois ele não vai para elementos de número negativo*/
+div:nth-child(-n + 3) {
+  margin-top: 0;
+}
+/* tirando o espaçamento dos 3 últimos elementos utilizando a pseudo-classe nth-last-child() que pega os n últimos irmãos - a função -n+3 pega os últimos n=0 -> 3; n=1 -> 2; n=2 -> 1; n=3 -> 0 e para por aqui pois ele não vai para elementos de número negativo */
+div:nth-last-child(-n + 3) {
+  margin-bottom: 0;
+}
