@@ -1,4 +1,3 @@
-
 .grid {
   display: grid;
   min-height: 100vh;
@@ -22,8 +21,3 @@ main {
 footer {
   grid-area: footer;
 }
-
-.redColor {
-  background-color: blue !important;
-}
-

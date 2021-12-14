@@ -1,0 +1,29 @@
+.title {
+  text-align: center;
+}
+
+.subTitle {
+  text-align: center;
+  color: "green";
+}
+
+.form {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.meuInput {
+  width: 100%;
+  padding: 12px 20px;
+  margin-bottom: 20px;
+}
+
+.meuBotao {
+  width: 80px;
+  padding: 5px 20px;
+  text-align: center;
+  font-weight: bold;
+  background-color: #ddd255;
+  border: 1px solid #cccccc;
+  margin-right: 15px;
+}

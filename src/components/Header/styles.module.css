@@ -1,0 +1,19 @@
+.navMenu {
+  background-color: #fffbef;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.42);
+}
+.myNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.menuItem {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #101010;
+  padding: 10px;
+  align-self: center;
+}
