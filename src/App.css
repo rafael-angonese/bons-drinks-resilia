@@ -1,57 +1,23 @@
-/* definimos um grid para as 3 áreas maiores que tem no layout que são topo, meio e fim que poderiam corresponder ao menu, conteúdo e rodapé */
 .grid {
   display: grid;
+  min-height: 100vh;
+
   grid-template-areas:
-    "topo"
-    "meio"
-    "fim";
-  /*  definimos o tamanho das linhas de acordo com o que foi dado para topo e fim e deixamos a parte do meio como auto - ou seja, automático. Também poderíamos usar calc(100vh - 90px - 70px) para ter o tamanho da altura da tela menos o topo e rodapé. Ou até poderia ter um tamanho definido como 50& ou 600px.  */
-  grid-template-rows: 90px auto 70px;
+    "header"
+    "content"
+    "footer ";
+
+  grid-template-rows: 60px auto 40px;
 }
 
-/* definimos o grid-item topo para encaixar na área */
-.topo {
-  grid-area: topo;
-  background-color: pink;
-}
-/* aqui é o coração da mágica: meio é um grid-item definido na sua área: meio e também podemos fazê-lo se tornar um grid container declarando novamente display: grid */
-.meio {
-  /*  aqui é ele grid-item  */
-  /*  então justificamos ele ao centro pois sua largura é de 80% da tela para dar o espaçamento lateral que vinha no layout  */
-  grid-area: meio;
-  width: 80%;
-  justify-self: center;
-
-  /*  aqui ele se torna também grid container  */
-  display: grid;
-  /*  definimos as 12 colunas com fracional, ou seja, serão flexíveis com o tamanho da tela  */
-  grid-template-columns: repeat(12, 1fr);
-  /*  damos um valor para as linhas auto geradas  */
-  grid-auto-rows: 200px;
-  /*  definimos o gap(vão) entre os items desse grid  */
-  gap: 20px;
-}
-/* definimos o grid-item fim para encaixar na área */
-.fim {
-  grid-area: fim;
-  background-color: pink;
+header {
+  grid-area: header;
 }
 
-/* grid-items internos do meio */
-/* esse bloco se expande por duas colunas onde quer que ele seja colocado - então a ordem do HTML vai importar */
-.bloco2colunas {
-  grid-column: span 2;
-  background-color: violet;
-}
-/* esse se expande por 4 colunas */
-.bloco4colunas {
-  grid-column: span 4;
-  background-color: lavender;
-}
-/* esse se expande por 6 colunas */
-.bloco6colunas {
-  grid-column: span 6;
-  background-color: purple;
+main {
+  grid-area: content;
 }
 
-/* assim, temos as classes que ocupam seus devidos números de colunas e a largura dessas colunas são flexíveis por conta do fr. Mas poderiam ter um número fixo também. */
+footer {
+  grid-area: footer;
+}
