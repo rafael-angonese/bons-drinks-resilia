@@ -17,7 +17,7 @@ class Header extends React.Component {
           <a href="#sobre" className={styles.menuItem}>
             Sobre Nós
           </a>
-          <a href="#home" className={styles.menuItem}>
+          <a href="#home" className={styles.logo}>
             Bons Drinks
           </a>
           <a href="#time" className={styles.menuItem}>

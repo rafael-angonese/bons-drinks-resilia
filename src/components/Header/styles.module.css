@@ -17,3 +17,12 @@
   padding: 10px;
   align-self: center;
 }
+
+.logo {
+  font-size: 36px;
+  text-decoration: none;
+  color: #101010;
+  padding: 10px;
+  align-self: center;
+  font-family: Bilbo Swash Caps, cursive;
+}
