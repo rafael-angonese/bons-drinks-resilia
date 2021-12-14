@@ -6,13 +6,13 @@ class Header extends React.Component {
       backgroundColor: "#FFFBEF",
       boxShadow: "5px 5px 10px rgba(0, 0, 0, 0.42)",
     };
-
     const myNav = {
       display: "flex",
-      alignSelf: "center",
       justifyContent: "space-between",
-      height: "60px",
+      alignItems: "center",
+      height: "100%",
     };
+
     const menuItem = {
       fontSize: "24px",
       fontWeight: "bold",
