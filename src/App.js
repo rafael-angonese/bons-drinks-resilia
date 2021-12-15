@@ -16,8 +16,9 @@ import { ReactComponent as Teste } from "./assets/imagens/react.svg";
 import "./App.css";
 
 function App() {
-  const fnButton = () => {
-    console.log("clickou aqui");
+  const adicionarCarrinho = (id) => {
+    console.log("adicionar no carrinho");
+    console.log(id)
   };
 
   return (
@@ -26,8 +27,8 @@ function App() {
       <main>
         <ButtonClass
           text="Botao de props"
-          funcao2={() => console.log("clickou aq")}
-          funcao={fnButton}
+          id='2'
+          addCar={adicionarCarrinho}
         >
           sdfasdffdf
         </ButtonClass>
