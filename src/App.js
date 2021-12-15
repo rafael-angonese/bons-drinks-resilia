@@ -28,7 +28,7 @@ function App() {
         <ButtonClass
           text="Botao de props"
           id='2'
-          addCar={adicionarCarrinho}
+          addCart={adicionarCarrinho}
         >
           sdfasdffdf
         </ButtonClass>

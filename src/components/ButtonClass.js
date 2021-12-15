@@ -11,7 +11,7 @@ class ButtonClass extends React.Component {
   handleClick() {
     console.log(this);
     console.log("handleClick");
-    this.props.addCar(this.props.id)
+    this.props.addCart(this.props.id)
   }
 
   render() {
