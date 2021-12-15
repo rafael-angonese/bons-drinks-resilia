@@ -7,11 +7,7 @@ class Header extends React.Component {
     return (
       <header className={styles.navMenu}>
         <nav className={styles.myNav}>
-          <a
-            href="#drinks"
-            className={styles.menuItem}
-            onMouseOver="this.style.color='red'"
-          >
+          <a href="#drinks" className={styles.menuItem}>
             Drinks
           </a>
           <a href="#sobre" className={styles.menuItem}>

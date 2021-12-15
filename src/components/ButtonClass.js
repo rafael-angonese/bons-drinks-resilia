@@ -1,8 +1,16 @@
 import React from "react";
 
 class ButtonClass extends React.Component {
+
   render() {
-    return <button>Botao 1</button>;
+    
+    console.log(this)
+
+    this.props.funcao()
+
+    console.log(this.props.text)
+
+    return <button>{this.props.children}</button>;
   }
 }
 
