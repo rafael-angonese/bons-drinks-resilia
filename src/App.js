@@ -26,6 +26,7 @@ function App() {
       <Header />
       <main>
         <Contador />
+        <ContactForm />
       </main>
       <Footer />
     </div>

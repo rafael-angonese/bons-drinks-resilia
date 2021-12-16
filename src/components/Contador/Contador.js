@@ -11,7 +11,7 @@ class Contador extends React.Component {
   }
 
   onIncrement(num) {
-    console.log("increment");
+    // console.log("increment");
 
     this.setState({
       contador: this.state.contador + num,
@@ -19,14 +19,28 @@ class Contador extends React.Component {
   }
 
   onDecrement(num) {
-    console.log("decrement");
+    // console.log("decrement");
     this.setState({
       contador: this.state.contador - num,
     });
   }
 
+  componentDidMount() {
+      console.log('componentDidMount')
+  }
+
+  componentDidUpdate() {
+      console.log('componentDidUpdate')
+  }
+
+  componentWillUnmount() {
+    console.log('componentWillUnmount')
+
+  }
+
+
   render() {
-    console.log(this);
+    // console.log(this);
     return (
       <>
         Contandor: {this.state.contador}
