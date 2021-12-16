@@ -1,5 +1,4 @@
 import Button from "./components/Button/Button";
-import ButtonClass from "./components/ButtonClass";
 import Clientes from "./components/Clientes";
 import ContactForm from "./components/ContactForm/ContactForm";
 import Header from "./components/Header/Header";
@@ -14,24 +13,19 @@ import ReactLogo from "./assets/imagens/react.svg";
 import { ReactComponent as Teste } from "./assets/imagens/react.svg";
 
 import "./App.css";
+import Contador from "./components/Contador/Contador";
 
 function App() {
   const adicionarCarrinho = (id) => {
     console.log("adicionar no carrinho");
-    console.log(id)
+    console.log(id);
   };
 
   return (
     <div className="grid">
       <Header />
       <main>
-        <ButtonClass
-          text="Botao de props"
-          id='2'
-          addCart={adicionarCarrinho}
-        >
-          sdfasdffdf
-        </ButtonClass>
+        <Contador />
       </main>
       <Footer />
     </div>

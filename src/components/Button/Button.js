@@ -1,9 +1,9 @@
 import React from "react";
 
-import styles from './styles.module.css'
-
-function Button() {
-  return <button className={styles.green}>Botao 1</button>
+class Button extends React.Component {
+  render() {
+    return <button  onClick={this.props.onClick}>{this.props.children}</button>;
+  }
 }
 
 export default Button;
