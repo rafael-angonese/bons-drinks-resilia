@@ -4,6 +4,7 @@ import ContactForm from "./components/ContactForm/ContactForm";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Images from "./components/Images";
+import Drinks from "./components/Drinks/Drinks";
 
 import React from "react";
 
@@ -25,8 +26,9 @@ function App() {
     <div className="grid">
       <Header />
       <main>
-        <Contador />
-        <ContactForm />
+        <Drinks />
+        {/* <Contador /> */}
+        {/* <ContactForm /> */}
       </main>
       <Footer />
     </div>

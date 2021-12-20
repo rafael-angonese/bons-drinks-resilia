@@ -8,6 +8,7 @@ class Contador extends React.Component {
     this.state = {
       contador: 0,
     };
+    console.log('executou o contrutor')
   }
 
   onIncrement(num) {
@@ -26,11 +27,15 @@ class Contador extends React.Component {
   }
 
   componentDidMount() {
-      console.log('componentDidMount')
+      console.log('executou o componentDidMount')
   }
 
   componentDidUpdate() {
-      console.log('componentDidUpdate')
+      console.log('executou o componentDidUpdate')
+
+      // this.setState({
+      //   contador: this.state.contador * 2,
+      // });
   }
 
   componentWillUnmount() {
@@ -40,7 +45,7 @@ class Contador extends React.Component {
 
 
   render() {
-    // console.log(this);
+    console.log('execut o render');
     return (
       <>
         Contandor: {this.state.contador}
