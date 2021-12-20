@@ -8,8 +8,8 @@ import about from "../assets/imagens/about-pic.jpg";
 function Images() {
   return (
     <>
-      <img src={contato} />
-      <img src={about} />
+      <img alt="contato" src={contato} />
+      <img alt="about" src={about} />
     </>
   );
 }
