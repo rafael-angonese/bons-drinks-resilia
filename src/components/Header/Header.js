@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import styles from "./styles.module.css";
 
@@ -7,21 +8,21 @@ class Header extends React.Component {
     return (
       <header className={styles.navMenu}>
         <nav className={styles.myNav}>
-          <a href="#drinks" className={styles.menuItem}>
+          <Link className={styles.menuItem} to="/drinks">
             Drinks
-          </a>
-          <a href="#sobre" className={styles.menuItem}>
+          </Link>
+          <Link className={styles.menuItem} to="/time">
             Sobre Nós
-          </a>
-          <a href="#home" className={styles.logo}>
+          </Link>
+          <Link className={styles.logo} to="/">
             Bons Drinks
-          </a>
-          <a href="#time" className={styles.menuItem}>
+          </Link>
+          <Link className={styles.menuItem} to="/time">
             Nosso Time
-          </a>
-          <a href="#contact" className={styles.menuItem}>
+          </Link>
+          <Link className={styles.menuItem} to="/contact">
             Contato
-          </a>
+          </Link>
         </nav>
       </header>
     );

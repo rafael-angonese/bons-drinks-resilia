@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 // import Button from "./components/Button/Button";
 // import Clientes from "./components/Clientes";
@@ -25,7 +25,7 @@ function App() {
           <Route path="/" element={<Drinks />} />
           <Route path="/drinks" element={<Drinks />} />
           <Route path="/contact" element={<ContactForm />} />
-          <Route path="*" element={<>Not found page</>} />
+          <Route path="*" element={<>Página não encontrada</>} />
         </Routes>
       </main>
       <Footer />
