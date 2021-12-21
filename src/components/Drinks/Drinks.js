@@ -28,6 +28,10 @@ class Drinks extends React.Component {
       });
   }
 
+  componentWillUnmount() {
+    console.log("Desmontou o component de Drinks");
+  }
+
   render() {
     return (
       <>
