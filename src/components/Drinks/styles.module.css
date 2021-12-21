@@ -1,0 +1,39 @@
+/* definindo o grid que vai ficar no componente Drinks e que vai segurar os cards */
+.grid {
+  display: grid;
+  width: 100%;
+  /*  como o conteuúdo das colunas é menor que o container do grid, usa-se justify-content para alinhar ao centro  */
+  justify-content: center;
+  grid-template-columns: repeat(3, 200px);
+  gap: 20px;
+}
+/* aqui fazemos o titulo da página de Drinks pegar a largura completa das 3 colunas */
+.tituloGrid {
+  text-align: center;
+  grid-column: 1/ -1;
+}
+
+.card {
+  height: 270px;
+  width: 200px;
+  background-color: transparent;
+  border: 1px solid #001a00;
+}
+
+.cardTitulo {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Raleway", sans-serif;
+  color: #001a00;
+  text-align: center;
+  margin: 10px 0;
+  padding: 0px 10px;
+  height: 50px;
+}
+
+/* a propriedade objetc-fit: cover faz a imagem cobrir o container no tamanho especificado de 200px - adicionamos mnax-width: 100% para ela nunca estourar seu tamanho e ficar pixelada. Isso também ajuda para responsividade */
+.cardImagem {
+  object-fit: cover;
+  max-width: 100%;
+  width: 200px;
+}

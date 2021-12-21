@@ -1,5 +1,7 @@
 import React from "react";
 
+import styles from "./styles.module.css";
+
 class Drinks extends React.Component {
   constructor(props) {
     super(props);
@@ -18,11 +20,9 @@ class Drinks extends React.Component {
     fetch(this.url)
       .then((resposta) => resposta.json())
       .then((json) => {
-
-        console.log(json)
-        // após ter os dados da API, precisamos guardá-los em um estado para que ao estado ser atualizado, 
+        // após ter os dados da API, precisamos guardá-los em um estado para que ao estado ser atualizado,
         // o React gere uma nova renderização do componente
-        // precisamos ver também como é o retorno do servidor, 
+        // precisamos ver também como é o retorno do servidor,
         // aqui precisamos acessar o objeto dados para ter o array com os drinks
         return this.setState({ loading: false, dados: json.drinks });
       });
@@ -31,11 +31,12 @@ class Drinks extends React.Component {
   render() {
     return (
       <>
-        <h1>Drinks</h1>
-        {this.state.loading && <>Carregando...</>}
-        {this.state.loading ? "Carregando..." : ""}
+        <div className={styles.grid}>
+          <h1 className={styles.tituloGrid}>Drinks</h1>
 
-        <ul>
+          {this.state.loading && <>Carregando...</>}
+          {this.state.loading ? "Carregando..." : ""}
+
           {/*vamos usar o método de array map (pois a resposta que temos no estado é um array de objetos) 
           e vamos iterar sobre ele retornando uma li com o nome do drink 
           - OBS.: quando temos elementos HTML sendo gerados com map ou outros iteradores é necessário ter um atributo 
@@ -44,11 +45,18 @@ class Drinks extends React.Component {
           No nosso caso estamos usando o próprio id dos Drinks como esse key,
           mas poderia ser também o argumento index do map*/}
           {this.state.dados.map((item) => {
-            return <li key={item.idDrink}>
-                {item.strDrink}
-                </li>;
+            return (
+              <div key={item.idDrink} className={styles.card}>
+                <img
+                  src={item.strDrinkThumb}
+                  alt={item.strDrink}
+                  className={styles.cardImagem}
+                />
+                <h3 className={styles.cardTitulo}>{item.strDrink}</h3>
+              </div>
+            );
           })}
-        </ul>
+        </div>
       </>
     );
   }
