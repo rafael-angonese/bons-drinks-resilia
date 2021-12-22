@@ -1,4 +1,5 @@
 import React from "react";
+// import axios from "axios";
 
 import styles from "./styles.module.css";
 
@@ -20,12 +21,24 @@ class Drinks extends React.Component {
     fetch(this.url)
       .then((resposta) => resposta.json())
       .then((json) => {
+
+        console.log(json)
         // após ter os dados da API, precisamos guardá-los em um estado para que ao estado ser atualizado,
         // o React gere uma nova renderização do componente
         // precisamos ver também como é o retorno do servidor,
         // aqui precisamos acessar o objeto dados para ter o array com os drinks
         return this.setState({ loading: false, dados: json.drinks });
       });
+
+    // get
+    // post
+    // put
+    // delete
+    // axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail')
+    // .then((response) => {
+    //   console.log(response);
+    //   this.setState({ loading: false, dados: response.data.drinks });
+    // });
   }
 
   componentWillUnmount() {
@@ -38,7 +51,7 @@ class Drinks extends React.Component {
         <div className={styles.grid}>
           <h1 className={styles.tituloGrid}>Drinks</h1>
 
-          {this.state.loading && <>Carregando...</>}
+          {this.state.loading && <>Carregando...</>}          
           {this.state.loading ? "Carregando..." : ""}
 
           {/*vamos usar o método de array map (pois a resposta que temos no estado é um array de objetos) 
