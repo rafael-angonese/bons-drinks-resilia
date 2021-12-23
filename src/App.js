@@ -15,12 +15,21 @@ import Drinks from "./components/Drinks/Drinks";
 // import { ReactComponent as Teste } from "./assets/imagens/react.svg";
 
 import "./App.css";
+import Button from "./components/Button/Button";
 
 function App() {
   return (
     <div className="grid">
       <Header />
       <main>
+        <Button isDisabled={false} color="blue">
+          Nosso texto
+        </Button>
+        <Button isDisabled={true}>Nosso texto</Button>
+        <Button isDisabled={true} color="pink">
+          Nosso texto
+        </Button>
+
         <Routes>
           <Route path="/" element={<Drinks />} />
           <Route path="/drinks" element={<Drinks />} />

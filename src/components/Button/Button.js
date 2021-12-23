@@ -1,12 +1,18 @@
 import React from "react";
 
-class Button extends React.Component {
+import { StyledButton } from "./styles";
 
+class Button extends React.Component {
   render() {
     return (
-      <button onClick={this.props.onClick}>
+      <StyledButton
+        disabled={this.props.isDisabled}
+        isDisabled={this.props.isDisabled}
+        color={this.props.color}
+        onClick={this.props.onClick}
+      >
         {this.props.children}
-      </button>
+      </StyledButton>
     );
   }
 }
