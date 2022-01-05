@@ -8,7 +8,7 @@ const InputText = (props) => {
       <label htmlFor="nome">{props.label}</label>
       <input
         type="text"
-        placeholder="Digite seu nome"
+        placeholder="Digite..."
         value={props.value}
         onChange={handleChangeName}
       />

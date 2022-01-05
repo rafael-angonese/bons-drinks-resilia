@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
 // import Button from "./components/Button/Button";
@@ -19,15 +19,21 @@ import Button from "./components/Button/Button";
 import { Texto } from "./components/Texto";
 import ButtonFn from "./components/ButtonFn/ButtonFn";
 import InputText from "./components/InputText/InputText";
+import DrinkFunc from "./components/DrinkFunc/DrinkFunc";
 
 function App() {
-  const [nome, setNome] = useState("");
+  // const [nome, setNome] = useState("");
+  // const [sobrenome, setSobrenome] = useState("");
+
+  // useEffect(() => {
+  //   console.log("lala");
+  // }, [nome]);
 
   return (
     <div className="grid">
       <Header />
       <main>
-        <Button isDisabled={false}>Nosso texto</Button>
+        {/* <Button isDisabled={false}>Nosso texto</Button>
         <Button isDisabled={true}>Nosso texto</Button>
         <Button isDisabled={false} color="pink">
           Nosso texto
@@ -35,7 +41,7 @@ function App() {
 
         <br />
         <br />
-        <br />
+        <br /> */}
 
         {/* <Texto color="blue"> Teste</Texto>
         <Texto color="red"> Teste</Texto>
@@ -43,17 +49,22 @@ function App() {
 
         {/* <ButtonFn /> */}
 
-        <InputText label="Digite seu nome" 
-        value={nome} 
-        onChange={setNome}>
+        {/* <InputText label="Digite o nome do drink" value={nome} onChange={setNome}>
           <div>
             <p>O nome eh obrigatorio</p>
           </div>
         </InputText>
 
+        <InputText
+          label="Digite qualauer coisa"
+          value={sobrenome}
+          onChange={setSobrenome}
+        /> */}
+
         <Routes>
           <Route path="/" element={<Drinks />} />
           <Route path="/drinks" element={<Drinks />} />
+          <Route path="/drinksFunk" element={<DrinkFunc />} />
           <Route path="/contact" element={<ContactForm />} />
           <Route path="*" element={<>Página não encontrada</>} />
         </Routes>

@@ -11,6 +11,9 @@ class Header extends React.Component {
           <Link className={styles.menuItem} to="/drinks">
             Drinks
           </Link>
+          <Link className={styles.menuItem} to="/drinksFunk">
+            Drinks Func
+          </Link>
           <Link className={styles.menuItem} to="/time">
             Sobre Nós
           </Link>

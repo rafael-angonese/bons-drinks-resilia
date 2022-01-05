@@ -22,7 +22,6 @@ class Drinks extends React.Component {
       .then((resposta) => resposta.json())
       .then((json) => {
 
-        console.log(json)
         // após ter os dados da API, precisamos guardá-los em um estado para que ao estado ser atualizado,
         // o React gere uma nova renderização do componente
         // precisamos ver também como é o retorno do servidor,
