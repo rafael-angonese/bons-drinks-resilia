@@ -13,6 +13,7 @@ import Drinks from "./components/Drinks/Drinks";
 // import contato from "./assets/imagens/contact-pic.jpg";
 // import ReactLogo from "./assets/imagens/react.svg";
 // import { ReactComponent as Teste } from "./assets/imagens/react.svg";
+// `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`
 
 import "./App.css";
 import Button from "./components/Button/Button";
