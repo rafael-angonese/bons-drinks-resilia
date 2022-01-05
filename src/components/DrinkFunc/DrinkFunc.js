@@ -41,7 +41,13 @@ const DrinkFunc = () => {
 
         {dados.map((item) => {
           return (
-            <div key={item.idDrink} className={styles.card}>
+            <div
+              onClick={() => {
+                // navegar url/item.id
+              }}
+              key={item.idDrink}
+              className={styles.card}
+            >
               <img
                 src={item.strDrinkThumb}
                 alt={item.strDrink}

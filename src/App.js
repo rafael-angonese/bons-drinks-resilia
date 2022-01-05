@@ -21,6 +21,7 @@ import { Texto } from "./components/Texto";
 import ButtonFn from "./components/ButtonFn/ButtonFn";
 import InputText from "./components/InputText/InputText";
 import DrinkFunc from "./components/DrinkFunc/DrinkFunc";
+import DrinkShow from "./components/DrinkShow/DrinkShow";
 
 function App() {
   // const [nome, setNome] = useState("");
@@ -66,6 +67,7 @@ function App() {
           <Route path="/" element={<Drinks />} />
           <Route path="/drinks" element={<Drinks />} />
           <Route path="/drinksFunk" element={<DrinkFunc />} />
+          <Route path="/drinks/id" element={<DrinkShow />} />
           <Route path="/contact" element={<ContactForm />} />
           <Route path="*" element={<>Página não encontrada</>} />
         </Routes>
