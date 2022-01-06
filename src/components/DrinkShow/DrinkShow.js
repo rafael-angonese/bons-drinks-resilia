@@ -1,10 +1,17 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useParams, useLocation } from "react-router-dom";
 
 function DrinkShow() {
-  const id = 15346;
   const [loading, setLoading] = useState(true);
   const [drink, setDrink] = useState(null);
+
+  const { id } = useParams();
+
+  const location = useLocation();
+
+  // console.log(location)
+  // console.log(window.location)
 
   useEffect(() => {
     async function getDrink() {
