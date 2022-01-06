@@ -65,9 +65,9 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Drinks />} />
-          <Route path="/drinks" element={<Drinks />} />
+          <Route path="/drinks/*" element={<DrinkFunc />} />
           <Route path="/drinksFunk" element={<DrinkFunc />} />
-          <Route path="/drinks/id" element={<DrinkShow />} />
+          <Route path="/drinksFunk/:id" element={<DrinkShow />} />
           <Route path="/contact" element={<ContactForm />} />
           <Route path="*" element={<>Página não encontrada</>} />
         </Routes>
