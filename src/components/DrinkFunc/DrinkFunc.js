@@ -1,13 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 
 import styles from "./styles.module.css";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import Button from "../Button/Button";
+import UserContext from "../../contexts/userContext";
 
 const DrinkFunc = () => {
   const [loading, setLoading] = useState(true);
   const [dados, setDados] = useState([]);
+
+  const { name, setName, user, setUser } = useContext(UserContext);
 
   const navigate = useNavigate();
 
@@ -49,15 +52,26 @@ const DrinkFunc = () => {
     <>
       <Button onClick={() => navigate("/drinks/pop")}>Pop</Button>
       <Button onClick={() => navigate("/drinks/buscar")}>Buscar</Button>
-
+      <Button
+        onClick={() =>
+          setUser({
+            name: "resilia",
+            id: 123,
+          })
+        }
+      >
+        Set Name
+      </Button>
+      <input value={name} onChange={(event) => setName(event.target.value)} />
       <br />
       <br />
-
+      ID: {user?.id}
+      <br />
+      Nome do usuario: {user?.name}
       <Routes>
         <Route path="/pop" element={<>POP</>} />
         <Route path="/buscar" element={<>Buscar</>} />
       </Routes>
-
       <div className={styles.grid}>
         <h1 className={styles.tituloGrid}>Drinks</h1>
         {loading && <>Carregando...</>}
