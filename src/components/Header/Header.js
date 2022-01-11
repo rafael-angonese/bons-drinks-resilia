@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { useContext } from "react/cjs/react.development";
 import UserContext from "../../contexts/userContext";
 
 import styles from "./styles.module.css";
