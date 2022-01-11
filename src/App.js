@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 // import Button from "./components/Button/Button";
@@ -16,10 +16,10 @@ import Drinks from "./components/Drinks/Drinks";
 // `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`
 
 import "./App.css";
-import Button from "./components/Button/Button";
-import { Texto } from "./components/Texto";
-import ButtonFn from "./components/ButtonFn/ButtonFn";
-import InputText from "./components/InputText/InputText";
+// import Button from "./components/Button/Button";
+// import { Texto } from "./components/Texto";
+// import ButtonFn from "./components/ButtonFn/ButtonFn";
+// import InputText from "./components/InputText/InputText";
 import DrinkFunc from "./components/DrinkFunc/DrinkFunc";
 import DrinkShow from "./components/DrinkShow/DrinkShow";
 

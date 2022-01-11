@@ -2,7 +2,8 @@ import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 
 import styles from "./styles.module.css";
-import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+// import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import Button from "../Button/Button";
 import UserContext from "../../contexts/userContext";
 
@@ -14,13 +15,13 @@ const DrinkFunc = () => {
 
   const navigate = useNavigate();
 
-  const location = useLocation();
+  // const location = useLocation();
 
-  const url1 = `https://www.thecocktaildb.com/api/json/v1/1/filter.php${location.search}`;
+  // const url1 = `https://www.thecocktaildb.com/api/json/v1/1/filter.php${location.search}`;
 
-  const url2 = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?${
-    window.location.href.split("?")[1]
-  }`;
+  // const url2 = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?${
+  //   window.location.href.split("?")[1]
+  // }`;
 
   const url =
     "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail";

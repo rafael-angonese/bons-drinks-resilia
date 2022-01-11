@@ -25,7 +25,7 @@ function DrinkShow() {
     }
 
     getDrink();
-  }, []);
+  }, [location, id]);
 
   return (
     <>
